@@ -1,4 +1,4 @@
-package com.example.movies
+package com.example.movies.view
 
 import android.content.Intent
 import android.os.Build
@@ -9,6 +9,8 @@ import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.movies.PopularList
+import com.example.movies.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
