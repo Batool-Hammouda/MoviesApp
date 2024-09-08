@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Movies</string>
     <string name="logo">logo</string>
+    <string name="movie_picture">movie picture</string>
+    <string name="_2008">2008</string>
+    <string name="name">Name</string>
+    <string name="back">Back</string>
+    <string name="popular_list">Popular List</string>
+    <string name="_9_9">9.9</string>
 </resources>

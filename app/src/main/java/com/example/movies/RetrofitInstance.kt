@@ -14,7 +14,7 @@ object RetrofitInstance {
 
     private val retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/movie/popular")
+            .baseUrl("https://api.themoviedb.org")
             .addConverterFactory(GsonConverterFactory.create())
             .client(auth_token)
             .build()
@@ -23,6 +23,4 @@ object RetrofitInstance {
     val api: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
-
-
 }

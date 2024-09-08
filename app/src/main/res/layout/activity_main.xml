@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".view.MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<ImageView
-    android:id="@+id/appIcon"
-    android:layout_width="90dp"
-    android:layout_height="90dp"
-    android:src="@drawable/logo"
-    android:contentDescription="@string/logo"/>
+    <data>
+        <variable
+            name="splash"
+            type="com.example.movies.view.MainActivity" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".view.MainActivity">
+
+        <ImageView
+            android:id="@+id/appIcon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/logo" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

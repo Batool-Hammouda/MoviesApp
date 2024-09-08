@@ -1,4 +1,4 @@
-package com.example.movies.Repository
+package com.example.movies.repository
 
 import com.example.movies.model.Response
 
