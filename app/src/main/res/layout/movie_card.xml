@@ -10,9 +10,14 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:padding="8dp"
-        app:cardCornerRadius="15dp">
+        android:layout_height="320dp"
+        android:layout_margin="12dp"
+        android:focusable="true"
+        android:shadowColor="@color/shadow"
+        app:cardElevation="11dp"
+        app:cardCornerRadius="8dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,20 +27,18 @@
                 android:id="@+id/moviePic"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:contentDescription="@string/movie_picture"
-                android:src="@drawable/divergent" />
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/movie_picture" />
 
             <TextView
                 android:id="@+id/rate"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/rate_textview"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="20dp"
-                android:text="@string/_9_9"
                 android:gravity="center"
-                android:textSize="25sp"
+                android:textSize="14sp"
                 android:textColor="@color/white"/>
 
             <LinearLayout
@@ -51,16 +54,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:textSize="23sp"
-                    android:text="@string/_2008"/>
+                    android:textSize="23sp" />
 
                 <TextView
                     android:id="@+id/year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:textSize="23sp"
-                    android:text="@string/name"/>
+                    android:textSize="23sp" />
 
 
             </LinearLayout>

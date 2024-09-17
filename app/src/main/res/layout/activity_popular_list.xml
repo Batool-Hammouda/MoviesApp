@@ -5,7 +5,7 @@
     <data>
         <variable
             name="popularList"
-            type="com.example.movies.PopularList" />
+            type="com.example.movies.view.PopularList" />
 
     </data>
 
@@ -14,28 +14,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".PopularList">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/back_button"
-            android:backgroundTint="@color/grey"
-            android:text="@string/back"
-            android:gravity=""
-            android:textColor="@color/black"
-            android:textSize="21sp"
-            android:padding="8dp"
-            android:drawableStart="@drawable/ic_launcher_back" />
+        android:padding="10dp"
+        tools:context=".view.PopularList">
 
         <TextView
             android:id="@+id/popularList"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:textSize="20sp"
-            android:padding="5dp"
+            android:layout_height="50dp"
+            android:textSize="23sp"
+            android:padding="12dp"
             android:backgroundTint="@color/grey"
             android:text="@string/popular_list" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="visible"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popularRecycler"

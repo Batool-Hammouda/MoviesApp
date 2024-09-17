@@ -1,7 +1,7 @@
 package com.example.movies.repository
 
-import com.example.movies.model.Response
+import com.example.movies.model.Movie
 
 interface MoviesRepository {
-    fun getMovies(callback: (List<Response>?, String?) -> Unit)
+    fun getMovies(callback: (List<Movie>?, String?) -> Unit)
 }
