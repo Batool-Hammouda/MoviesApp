@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="popularList"
+            type="com.example.movies.view.PopularListActivity" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".view.PopularList">
+
+        <TextView
+            android:id="@+id/popularList"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="21sp"
+            android:padding="12dp"
+            android:backgroundTint="@color/grey"
+            android:text="@string/popular_list" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="visible"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popularRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/movie_card" />
+
+    </LinearLayout>
+</layout>
