@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET("/3/movie/popular")
-   fun getMovies(@Query("language") language:String,
+    fun getMovies(@Query("language") language:String,
                   @Query("page")page:Int
     ): Call<Response>
 }
