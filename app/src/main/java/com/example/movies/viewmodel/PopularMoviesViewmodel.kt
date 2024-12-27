@@ -1,6 +1,5 @@
 package com.example.movies.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movies.model.Movie
@@ -15,17 +14,11 @@ class PopularMoviesViewmodel(private val moviesRepository: PopularMoviesReposito
     private val _popularMoviesFlow = MutableSharedFlow<List<Movie>?>()
     val popularMoviesFlow: SharedFlow<List<Movie>?> get() = _popularMoviesFlow
 
-    private val _searchedMovie = MutableLiveData<List<Movie>?>()
-    val searchedMovie: MutableLiveData<List<Movie>?> get() = _searchedMovie
-
-    private var listOfMovies: List<Movie>? = emptyList()
-
 
     fun fetchMovies() {
         viewModelScope.launch {
             try {
                 moviesRepository.getMovies().collect { moviesList ->
-                    listOfMovies = moviesList
                     _popularMoviesFlow.emit(moviesList)
                 }
             } catch (e: HTTPErrorsException) {
@@ -42,15 +35,6 @@ class PopularMoviesViewmodel(private val moviesRepository: PopularMoviesReposito
                 }
             }
 
-        }
-    }
-
-    fun searchForMovie(name: String) {
-        if(name.isBlank()){
-            _searchedMovie.value=listOfMovies
-        }
-        else{
-            _searchedMovie.value=listOfMovies?.filter { it.title?.contains(name, ignoreCase = true)?:false }
         }
     }
 }

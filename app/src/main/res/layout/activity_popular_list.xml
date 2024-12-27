@@ -23,20 +23,8 @@
             android:layout_height="50dp"
             android:textSize="21sp"
             android:padding="12dp"
-            android:background="@color/grey"
+            android:backgroundTint="@color/grey"
             android:text="@string/popular_list" />
-
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:autofillHints="Search for Movie"
-            android:textSize="21sp"
-            android:padding="12dp"
-            android:background="@color/grey"
-            android:queryHint="search for specific Movie"
-            tools:ignore="TextFields,VisualLintTextFieldSize" />
-
 
         <ProgressBar
             android:id="@+id/progressBar"

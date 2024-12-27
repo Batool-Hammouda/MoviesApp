@@ -4,4 +4,5 @@
     <string name="movie_picture">movie_picture</string>
     <string name="popular_list">popular List</string>
     <string name="movie_name_to_search_for">Movie Name to search for</string>
+    <string name="dark_mode">Dark Mode</string>
 </resources>

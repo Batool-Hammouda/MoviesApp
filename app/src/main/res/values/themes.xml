@@ -5,7 +5,12 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor">@color/grey</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:progressBarStyle">@style/LightProgressBar</item>
     </style>
 
     <style name="Theme.Movies" parent="Base.Theme.Movies" />
+    <style name="LightProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/black</item>
+    </style>
+
 </resources>
