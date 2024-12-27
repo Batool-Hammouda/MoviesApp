@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -30,6 +31,8 @@ class PopularListActivity : AppCompatActivity() {
 
         popularRecycler = listBinding.popularRecycler
         popularRecycler.layoutManager = GridLayoutManager(this, 2)
+        val search = listBinding.search
+        search.visibility = View.GONE
         val progressBar = listBinding.progressBar
         progressBar.visibility
 
@@ -44,9 +47,29 @@ class PopularListActivity : AppCompatActivity() {
                 popularRecycler.adapter = popularListAdapter
                 progressBar.visibility = View.GONE
                 popularListAdapter.submitList(movie)
+                search.visibility = View.VISIBLE
             }
+        }
+        viewmodel.searchedMovie.observe(this@PopularListActivity) { movies ->
+            popularListAdapter.submitList(movies)
         }
 
         viewmodel.fetchMovies()
+
+
+        search.setOnQueryTextListener(object:SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                viewmodel.searchForMovie(newText ?: "")
+                return true
+            }
+
+        })
+
+
     }
 }
