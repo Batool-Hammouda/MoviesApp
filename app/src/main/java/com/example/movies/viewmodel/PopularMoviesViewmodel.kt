@@ -13,12 +13,13 @@ class PopularMoviesViewmodel(private val moviesRepository: PopularMoviesReposito
 
     private val _popularMoviesFlow = MutableSharedFlow<List<Movie>?>()
     val popularMoviesFlow: SharedFlow<List<Movie>?> get() = _popularMoviesFlow
-
+    private var listOfMovies: List<Movie>? = emptyList()
 
     fun fetchMovies() {
         viewModelScope.launch {
             try {
                 moviesRepository.getMovies().collect { moviesList ->
+                    listOfMovies=moviesList
                     _popularMoviesFlow.emit(moviesList)
                 }
             } catch (e: HTTPErrorsException) {
@@ -35,6 +36,16 @@ class PopularMoviesViewmodel(private val moviesRepository: PopularMoviesReposito
                 }
             }
 
+        }
+    }
+    fun searchForMovie(name: String) {
+        viewModelScope.launch {
+            val filteredList = if (name.isBlank()) {
+                listOfMovies
+            } else {
+                listOfMovies?.filter { it.title?.contains(name, ignoreCase = true) ?: false }
+            }
+            _popularMoviesFlow.emit(filteredList)
         }
     }
 }
