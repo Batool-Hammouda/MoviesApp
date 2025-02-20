@@ -14,23 +14,62 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="9dp"
         tools:context=".view.PopularList">
 
-        <TextView
-            android:id="@+id/popularList"
+        <LinearLayout
+            android:id="@+id/secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/grey"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/popularList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:text="@string/popular_list"
+                android:textColor="@color/textColor"
+                android:textSize="21sp" />
+
+            <Switch
+                android:id="@+id/switchTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:padding="5dp"
+                android:text="@string/dark_mode"
+                android:textColor="@color/textColor"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+        </LinearLayout>
+
+
+
+        <SearchView
+            android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:autofillHints="Search for Movie"
             android:textSize="21sp"
-            android:padding="12dp"
-            android:backgroundTint="@color/grey"
-            android:text="@string/popular_list" />
+            android:padding="11dp"
+            android:background="@color/grey"
+            android:textColor="@color/textColor"
+            android:layout_marginTop="5dp"
+            android:queryHint="Movie Name"
+            tools:ignore="TextFields,VisualLintTextFieldSize" />
+
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:visibility="visible"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_gravity="center"/>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popularRecycler"
