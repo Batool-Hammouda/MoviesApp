@@ -23,8 +23,8 @@ The app allows users to browse and search for popular movies from TMDB (The Movi
 
 | Splash Screen | Progress Bar | Progress Bar (Dark) |
 |---------------|--------------|----------------------|
-| ![Splash](splash screen.png) | ![Progress](progress bar.png) | ![Progress Dark](dark progress bar.png) |
+| ![Splash](splash_screen.png) | ![Progress](progress_bar.png) | ![Progress Dark](dark_progress_bar.png) |
 
 | Movies Screen | Movies Screen (Dark) | Search Screen |
 |---------------|-----------------------|----------------|
-| ![Movies](secScreen.png) | ![Movies Dark](secScreen dark.png) | ![Search](search.png) |
+| ![Movies](secScreen.png) | ![Movies Dark](secScreen_dark.png) | ![Search](search.png) |
